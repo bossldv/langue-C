@@ -1,0 +1,49 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    int n, k, x = 0;
+    cin >> n >> k;
+    vector <int> a;
+    vector <string> b;
+    for (int i = 0; i < 2 * k; i++)
+    {
+        int b;
+        cin >> b;
+        a.push_back(b);
+    }
+   
+    for (int i = 0; i < n; i++)
+    {
+        b.push_back("I");
+    }
+   
+    for (int i = 0; i <= n; i++)
+    {
+        for (int j = 0; j < 2 * k; j += 2)
+        {
+            if (a[j] == i)
+            {
+                x = a[j];
+                int z;
+                z = i - 1;
+                while (x <= a[j + 1])
+                {
+                    b[z] = ".";
+                    x++;
+                    z++;
+                }
+            }
+        }
+    }
+
+    for (auto now : b)
+    {
+        cout << now;
+    }
+    return 0;
+   
+}
